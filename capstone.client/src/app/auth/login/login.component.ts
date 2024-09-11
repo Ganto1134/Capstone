@@ -18,7 +18,7 @@ export class LoginComponent {
     this.authService.login(user).subscribe(
       (response: any) => {
         this.authService.setToken(response.token);
-        this.router.navigate(['/Home']);
+        this.router.navigate(['/home']);
       },
       (error) => {
         this.errorMessage = 'Login failed. Please check your credentials.';

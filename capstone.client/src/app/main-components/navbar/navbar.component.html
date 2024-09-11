@@ -33,16 +33,20 @@
           >
         </li>
         <li *ngIf="isLoggedIn" class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active"
-            >Home</a
+          <button
+            (click)="logout()"
+            class="nav-link btn btn-link"
+            routerLinkActive="active"
           >
-        </li>
-        <li *ngIf="isLoggedIn" class="nav-item">
-          <button (click)="logout()" class="nav-link" routerLinkActive="active">
             Logout
           </button>
         </li>
       </ul>
+
+      <!-- Nome utente allineato a destra -->
+      <span *ngIf="isLoggedIn" class="navbar-text ms-auto">
+        Benvenuto, {{ userName }}
+      </span>
     </div>
   </div>
 </nav>

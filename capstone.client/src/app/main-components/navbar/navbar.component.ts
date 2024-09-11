@@ -10,13 +10,16 @@ export class NavbarComponent {
 
   show: boolean = false;
   isLoggedIn:boolean = false;
+  userName: string | null = '';
 
   constructor(private authSvc:AuthService){}
 
   ngOnInit(){
 
     this.authSvc.isLoggedIn$
-    .subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn )
+    .subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn );
+
+    this.authSvc.userName$.subscribe(userName => this.userName = userName);
 
   }
 
