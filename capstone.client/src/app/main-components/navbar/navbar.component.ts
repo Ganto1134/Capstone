@@ -11,6 +11,7 @@ export class NavbarComponent {
   show: boolean = false;
   isLoggedIn:boolean = false;
   userName: string | null = '';
+  role: string | null = '';
 
   constructor(private authSvc:AuthService){}
 
@@ -21,6 +22,7 @@ export class NavbarComponent {
 
     this.authSvc.userName$.subscribe(userName => this.userName = userName);
 
+    this.authSvc.userRole$.subscribe(userRole => this.role = userRole);
   }
 
   logout(){

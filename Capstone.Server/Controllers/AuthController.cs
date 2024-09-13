@@ -54,7 +54,7 @@ public class AuthController : ControllerBase
         }
 
         string token = CreateToken(user);
-        return Ok(new { token = token, userName = user.Username });
+        return Ok(new { token = token, userName = user.Username, role = user.Role });
     }
 
     private string CreateToken(User user)

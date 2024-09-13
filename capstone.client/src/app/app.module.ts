@@ -7,12 +7,20 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './main-components/navbar/navbar.component';
 import { FooterComponent } from './main-components/footer/footer.component';
+import { CardListComponent } from './admin/card-list/card-list.component';
+import { CardCreateComponent } from './admin/card-create/card-create.component';
+import { CardEditComponent } from './admin/card-edit/card-edit.component';
+import { CardDetailsComponent } from './admin/card-details/card-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CardListComponent,
+    CardCreateComponent,
+    CardEditComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

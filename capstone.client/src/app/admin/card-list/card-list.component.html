@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Lista Carte</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Condizione</th>
+        <th>Prezzo</th>
+        <th>Immagine</th>
+        <th>Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let card of cards">
+        <td class="align-content-center">{{ card.name }}</td>
+        <td class="align-content-center">{{ card.gameCategory }}</td>
+        <td class="align-content-center">{{ card.condition }}</td>
+        <td class="align-content-center">{{ card.price | currency }}</td>
+        <td>
+          <img
+            [src]="card.imageUrl"
+            [alt]="'Immagine di ' + card.name"
+            width="75"
+          />
+        </td>
+        <td class="align-content-center">
+          <a
+            [routerLink]="['/admin/edit', card.id]"
+            class="btn btn-sm btn-warning me-2"
+            >Modifica</a
+          >
+          <a
+            [routerLink]="['/admin/details', card.id]"
+            class="btn btn-sm btn-info me-2"
+            >Dettagli</a
+          >
+          <button (click)="deleteCard(card.id)" class="btn btn-sm btn-danger">
+            Elimina
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

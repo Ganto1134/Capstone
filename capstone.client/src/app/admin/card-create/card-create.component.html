@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Crea Carta</h2>
+  <form (ngSubmit)="createCard()">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input
+        [(ngModel)]="card.name"
+        name="name"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="gameCategory">Gioco</label>
+      <input
+        [(ngModel)]="card.gameCategory"
+        name="gameCategory"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="condition">Condizione</label>
+      <input
+        [(ngModel)]="card.condition"
+        name="condition"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="price">Prezzo</label>
+      <input
+        [(ngModel)]="card.price"
+        name="price"
+        type="number"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">URL Immagine</label>
+      <input [(ngModel)]="card.imageUrl" name="imageUrl" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Crea Carta</button>
+  </form>
+</div>

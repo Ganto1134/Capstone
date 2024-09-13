@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <h2>Modifica Carta</h2>
+
+  <form (ngSubmit)="updateCard()">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="card.name"
+        name="name"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="condition">Condizione</label>
+      <input
+        type="text"
+        id="condition"
+        [(ngModel)]="card.condition"
+        name="condition"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="gameCategory">Categoria del gioco</label>
+      <input
+        type="text"
+        id="gameCategory"
+        [(ngModel)]="card.gameCategory"
+        name="gameCategory"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="price">Prezzo</label>
+      <input
+        type="number"
+        id="price"
+        [(ngModel)]="card.price"
+        name="price"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="imageUrl">URL dell'immagine</label>
+      <input
+        type="text"
+        id="imageUrl"
+        [(ngModel)]="card.imageUrl"
+        name="imageUrl"
+        class="form-control"
+      />
+    </div>
+
+    <div class="mt-4">
+      <button type="submit" class="btn btn-primary">Salva</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="router.navigate(['/admin/list'])"
+      >
+        Annulla
+      </button>
+    </div>
+  </form>
+</div>

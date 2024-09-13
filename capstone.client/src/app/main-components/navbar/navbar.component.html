@@ -32,6 +32,11 @@
             >Accedi</a
           >
         </li>
+        <li *ngIf="isLoggedIn && role === 'Admin'" class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active"
+            >Area Admin</a
+          >
+        </li>
         <li *ngIf="isLoggedIn" class="nav-item">
           <button
             (click)="logout()"
@@ -42,8 +47,6 @@
           </button>
         </li>
       </ul>
-
-      <!-- Nome utente allineato a destra -->
       <span *ngIf="isLoggedIn" class="navbar-text ms-auto">
         Benvenuto, {{ userName }}
       </span>
