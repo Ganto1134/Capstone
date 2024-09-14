@@ -54,7 +54,7 @@ public class AuthController : ControllerBase
         }
 
         string token = CreateToken(user);
-        return Ok(new { token = token, userName = user.Username, role = user.Role });
+        return Ok(new { token = token, userName = user.Username, role = user.Role, userId = user.Id, });
     }
 
     private string CreateToken(User user)
@@ -63,7 +63,8 @@ public class AuthController : ControllerBase
         {
             new Claim(ClaimTypes.Name, user.Username),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Role, user.Role),
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

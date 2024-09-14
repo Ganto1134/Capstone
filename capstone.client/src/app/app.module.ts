@@ -11,6 +11,7 @@ import { CardListComponent } from './admin/card-list/card-list.component';
 import { CardCreateComponent } from './admin/card-create/card-create.component';
 import { CardEditComponent } from './admin/card-edit/card-edit.component';
 import { CardDetailsComponent } from './admin/card-details/card-details.component';
+import { MyCartComponent } from './pages/my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CardDetailsComponent } from './admin/card-details/card-details.componen
     CardListComponent,
     CardCreateComponent,
     CardEditComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    MyCartComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

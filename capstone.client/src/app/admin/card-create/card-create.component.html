@@ -12,12 +12,16 @@
     </div>
     <div class="form-group">
       <label for="gameCategory">Gioco</label>
-      <input
+      <select
         [(ngModel)]="card.gameCategory"
         name="gameCategory"
         class="form-control"
         required
-      />
+      >
+        <option [value]="'Pokemon'">Pokémon</option>
+        <option [value]="'Magic'">Magic</option>
+        <option [value]="'Yu-Gi-Oh!'">Yu-Gi-Oh!</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="condition">Condizione</label>

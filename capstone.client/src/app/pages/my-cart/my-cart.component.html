@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h2>Il mio carrello</h2>
+
+  <div *ngIf="cart && cart.items?.length > 0; else emptyCart">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Immagine</th>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Prezzo</th>
+          <th>Quantità</th>
+          <th>Totale</th>
+          <th>Rimuovi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart.items">
+          <td>
+            <img
+              [src]="item.card.imageUrl"
+              alt="{{ item.card.name }}"
+              width="50"
+            />
+          </td>
+          <td>{{ item.card.name }}</td>
+          <td>{{ item.card.gameCategory }}</td>
+          <td>{{ item.card.price | currency }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.card.price * item.quantity | currency }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="removeFromCart(item.id)">
+              Rimuovi
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Totale carrello: {{ getTotal() | currency }}</strong>
+    </p>
+    <button class="btn btn-success" (click)="checkout()">
+      Completa Acquisto
+    </button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Il tuo carrello è vuoto.</p>
+  </ng-template>
+</div>
