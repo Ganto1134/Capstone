@@ -1,10 +1,13 @@
-﻿namespace Capstone.Server.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Capstone.Server.Models
 {
     public class OrderItem
     {
         public int Id { get; set; }
 
         public int OrderId { get; set; }
+        [JsonIgnore]
         public Order Order { get; set; }
 
         public int CardId { get; set; }

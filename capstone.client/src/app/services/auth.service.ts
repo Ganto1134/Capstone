@@ -27,7 +27,7 @@ export class AuthService {
   login(user: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, user).pipe(
       tap((response: any) => {
-        if (response.token && response.userName && response.role) {
+        if (response.token) {
           this.setToken(response.token);
           this.setUserName(response.userName);
           this.setUserRole(response.role);
@@ -43,6 +43,7 @@ export class AuthService {
     localStorage.removeItem('userRole');
     this.isLoggedInSubject.next(false);
     this.userNameSubject.next(null);
+    this.userRoleSubject.next(null);
     this.router.navigate(['/login']);
   }
 
@@ -58,6 +59,7 @@ export class AuthService {
 
   setUserRole(role: string) {
     localStorage.setItem('userRole', role);
+    this.userRoleSubject.next(role);
   }
 
   getUserRole(): string | null {

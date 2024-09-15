@@ -15,14 +15,18 @@ export class NavbarComponent {
 
   constructor(private authSvc:AuthService){}
 
-  ngOnInit(){
+  ngOnInit() {
+    this.authSvc.isLoggedIn$.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
 
-    this.authSvc.isLoggedIn$
-    .subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn );
+    this.authSvc.userName$.subscribe(userName => {
+      this.userName = userName;
+    });
 
-    this.authSvc.userName$.subscribe(userName => this.userName = userName);
-
-    this.authSvc.userRole$.subscribe(userRole => this.role = userRole);
+    this.authSvc.userRole$.subscribe(userRole => {
+      this.role = userRole;
+    });
   }
 
   logout(){

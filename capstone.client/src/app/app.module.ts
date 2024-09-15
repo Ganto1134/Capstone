@@ -12,6 +12,7 @@ import { CardCreateComponent } from './admin/card-create/card-create.component';
 import { CardEditComponent } from './admin/card-edit/card-edit.component';
 import { CardDetailsComponent } from './admin/card-details/card-details.component';
 import { MyCartComponent } from './pages/my-cart/my-cart.component';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MyCartComponent } from './pages/my-cart/my-cart.component';
     CardCreateComponent,
     CardEditComponent,
     CardDetailsComponent,
-    MyCartComponent
+    MyCartComponent,
+    AdminOrdersComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

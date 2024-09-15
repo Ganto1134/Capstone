@@ -1,0 +1,73 @@
+<div class="container mt-5">
+  <h2>I miei ordini</h2>
+
+  <div *ngIf="orders.length > 0; else noOrders">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Ordine ID</th>
+          <th>Data</th>
+          <th>Totale</th>
+          <th>Stato</th>
+          <th>Dettagli</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.orderDate | date }}</td>
+          <td>{{ order.totalAmount | currency }}</td>
+          <td>{{ order.status }}</td>
+          <td>
+            <button class="btn btn-info" (click)="viewOrderDetails(order.id)">
+              Dettagli
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noOrders>
+    <p>Non hai ordini.</p>
+  </ng-template>
+
+  <div *ngIf="selectedOrder" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Dettagli Ordine #{{ selectedOrder?.id }}</h5>
+        <button class="close-button" (click)="closeModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <strong>Data Ordine:</strong> {{ selectedOrder?.orderDate | date }}
+        </p>
+        <p><strong>Stato:</strong> {{ selectedOrder?.status }}</p>
+        <p>
+          <strong>Totale:</strong> {{ selectedOrder?.totalAmount | currency }}
+        </p>
+
+        <h5>Articoli</h5>
+        <ul>
+          <li *ngFor="let item of selectedOrder?.orderItems" class="order-item">
+            <img
+              [src]="item.card.imageUrl"
+              alt="{{ item.card.name }}"
+              width="50"
+              height="50"
+              class="item-image"
+            />
+            <div class="item-details">
+              <strong>{{ item.card.name }}</strong>
+              {{ item.card.gameCategory }} - {{ item.quantity }} x
+              {{ item.price | currency }}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="closeModal()">Chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
