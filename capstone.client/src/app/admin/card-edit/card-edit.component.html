@@ -1,78 +1,94 @@
 <div class="container mt-5">
-  <h2>Modifica Carta</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card p-4">
+        <h2 class="text-center mb-4">Modifica Carta</h2>
 
-  <form (ngSubmit)="updateCard()">
-    <div class="form-group">
-      <label for="name">Nome</label>
-      <input
-        type="text"
-        id="name"
-        [(ngModel)]="card.name"
-        name="name"
-        class="form-control"
-        required
-      />
-    </div>
+        <form (ngSubmit)="updateCard()">
+          <div class="form-group mb-3">
+            <label for="name">Nome</label>
+            <input
+              type="text"
+              id="name"
+              [(ngModel)]="card.name"
+              name="name"
+              class="form-control"
+              placeholder="Inserisci il nome della carta"
+              required
+            />
+          </div>
 
-    <div class="form-group mt-3">
-      <label for="condition">Condizione</label>
-      <input
-        type="text"
-        id="condition"
-        [(ngModel)]="card.condition"
-        name="condition"
-        class="form-control"
-        required
-      />
-    </div>
+          <div class="form-group mb-3">
+            <label for="condition">Condizione</label>
+            <select
+              id="condition"
+              [(ngModel)]="card.condition"
+              name="condition"
+              class="form-control"
+              required
+            >
+              <option [value]="'Perfetta'">Perfetta</option>
+              <option [value]="'Fresco di booster'">Fresco di booster</option>
+              <option [value]="'Leggera usura'">Leggera usura</option>
+              <option [value]="'Usura visibile'">Usura visibile</option>
+              <option [value]="'Grave usura'">Grave usura</option>
+              <option [value]="'Danneggiata'">Danneggiata</option>
+              <option [value]="'Distrutta'">Distrutta</option>
+            </select>
+          </div>
 
-    <div class="form-group mt-3">
-      <label for="gameCategory">Categoria del gioco</label>
-      <select
-        id="gameCategory"
-        [(ngModel)]="card.gameCategory"
-        name="gameCategory"
-        class="form-control"
-        required
-      >
-        <option [value]="'Pokemon'">Pokémon</option>
-        <option [value]="'Magic'">Magic</option>
-        <option [value]="'Yu-Gi-Oh!'">Yu-Gi-Oh!</option>
-      </select>
-    </div>
+          <div class="form-group mb-3">
+            <label for="gameCategory">Categoria del gioco</label>
+            <select
+              id="gameCategory"
+              [(ngModel)]="card.gameCategory"
+              name="gameCategory"
+              class="form-control"
+              required
+            >
+              <option [value]="'Pokemon'">Pokémon</option>
+              <option [value]="'Magic'">Magic</option>
+              <option [value]="'Yu-Gi-Oh!'">Yu-Gi-Oh!</option>
+            </select>
+          </div>
 
-    <div class="form-group mt-3">
-      <label for="price">Prezzo</label>
-      <input
-        type="number"
-        id="price"
-        [(ngModel)]="card.price"
-        name="price"
-        class="form-control"
-        required
-      />
-    </div>
+          <div class="form-group mb-3">
+            <label for="price">Prezzo</label>
+            <input
+              type="number"
+              id="price"
+              [(ngModel)]="card.price"
+              name="price"
+              class="form-control"
+              placeholder="Inserisci il prezzo della carta"
+              required
+            />
+          </div>
 
-    <div class="form-group mt-3">
-      <label for="imageUrl">URL dell'immagine</label>
-      <input
-        type="text"
-        id="imageUrl"
-        [(ngModel)]="card.imageUrl"
-        name="imageUrl"
-        class="form-control"
-      />
-    </div>
+          <div class="form-group mb-4">
+            <label for="imageUrl">URL dell'immagine</label>
+            <input
+              type="text"
+              id="imageUrl"
+              [(ngModel)]="card.imageUrl"
+              name="imageUrl"
+              class="form-control"
+              placeholder="Inserisci l'URL dell'immagine"
+            />
+          </div>
 
-    <div class="mt-4">
-      <button type="submit" class="btn btn-primary">Salva</button>
-      <button
-        type="button"
-        class="btn btn-secondary"
-        (click)="router.navigate(['/admin/list'])"
-      >
-        Annulla
-      </button>
+          <div class="d-flex justify-content-between mt-4">
+            <button type="submit" class="btn btn-primary">Salva</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="router.navigate(['/admin/list'])"
+            >
+              Annulla
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </form>
+  </div>
 </div>

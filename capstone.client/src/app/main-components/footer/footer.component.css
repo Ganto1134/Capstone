@@ -1,11 +1,11 @@
 .row span i {
   font-size: 40px;
-  color: black !important;
+  color: white !important;
   padding: 0 0.5rem;
 }
 
 .row span i:hover {
-  background-color: blue;
+  background-color: #c58506;
 }
 
 .col p a {
@@ -15,5 +15,18 @@
 }
 
 .col p a:hover {
-  color: blue;
+  color: #c58506 !important;
+}
+
+.logo {
+  width: 75px;
+  height: auto;
+}
+
+.brown {
+  background-color: #141e42;
+}
+
+p a {
+  color: white !important;
 }

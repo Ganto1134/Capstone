@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-info pb-2">
+<nav class="navbar navbar-expand-lg brown pb-2">
   <div class="container-fluid">
-    <img src="" alt="logo" class="logo" />
+    <img src="assets/images/CartoMania.png" alt="logo" class="logo" />
     <button
       (click)="show = !show"
       class="navbar-toggler"
@@ -15,41 +15,58 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li *ngIf="isLoggedIn" class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link active text-white"
             aria-current="page"
             routerLink="/home"
             routerLinkActive="active"
-            >Home</a
           >
+            <i class="bi bi-house-door"></i> Home
+          </a>
         </li>
         <li *ngIf="!isLoggedIn" class="nav-item">
-          <a class="nav-link" routerLink="/register" routerLinkActive="active"
-            >Registrati</a
+          <a
+            class="nav-link text-white"
+            routerLink="/register"
+            routerLinkActive="active"
           >
+            <i class="bi bi-person-plus"></i> Registrati
+          </a>
         </li>
         <li *ngIf="!isLoggedIn" class="nav-item">
-          <a class="nav-link" routerLink="/login" routerLinkActive="active"
-            >Accedi</a
+          <a
+            class="nav-link text-white"
+            routerLink="/login"
+            routerLinkActive="active"
           >
+            <i class="bi bi-box-arrow-in-right"></i> Accedi
+          </a>
         </li>
         <li *ngIf="isLoggedIn && role === 'Admin'" class="nav-item">
-          <a class="nav-link" routerLink="/admin" routerLinkActive="active"
-            >Area Admin</a
+          <a
+            class="nav-link text-white"
+            routerLink="/admin"
+            routerLinkActive="active"
           >
+            <i class="bi bi-gear"></i> Area Admin
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto d-flex align-items-center mb-2 mb-lg-0">
+        <li *ngIf="isLoggedIn" class="nav-item me-3">
+          <span class="navbar-text text-white">
+            Benvenuto, {{ userName }}
+          </span>
         </li>
         <li *ngIf="isLoggedIn" class="nav-item">
           <button
             (click)="logout()"
-            class="nav-link btn btn-link"
+            class="nav-link btn btn-link text-white"
             routerLinkActive="active"
           >
-            Logout
+            <i class="bi bi-box-arrow-right"></i> Logout
           </button>
         </li>
       </ul>
-      <span *ngIf="isLoggedIn" class="navbar-text ms-auto">
-        Benvenuto, {{ userName }}
-      </span>
     </div>
   </div>
 </nav>

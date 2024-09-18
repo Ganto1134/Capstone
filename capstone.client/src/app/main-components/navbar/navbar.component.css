@@ -1,0 +1,16 @@
+.logo {
+  width: 75px;
+  height: auto;
+}
+
+.brown {
+  background-color: #141e42;
+}
+
+.nav-link:hover {
+  color: #933a2a !important;
+}
+
+.active {
+  color: #c58506 !important;
+}

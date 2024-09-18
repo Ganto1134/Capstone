@@ -1,11 +1,11 @@
 <div class="container mt-5">
-  <h2>I miei ordini</h2>
+  <h2 class="mb-4 text-white">I miei ordini</h2>
 
   <div *ngIf="orders.length > 0; else noOrders">
     <table class="table">
       <thead>
         <tr>
-          <th>Ordine ID</th>
+          <th>ID Ordine</th>
           <th>Data</th>
           <th>Totale</th>
           <th>Stato</th>
@@ -29,7 +29,7 @@
   </div>
 
   <ng-template #noOrders>
-    <p>Non hai ordini.</p>
+    <p class="text-info">Non hai ordini.</p>
   </ng-template>
 
   <div *ngIf="selectedOrder" class="modal-backdrop">

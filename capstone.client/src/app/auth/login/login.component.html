@@ -1,42 +1,46 @@
-<div class="container mt-5">
+<div class="container login-container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="text-center">Login</h2>
+      <div class="card p-4">
+        <h2 class="text-center mb-4">Login</h2>
 
-      <form (ngSubmit)="login()">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            [(ngModel)]="email"
-            name="email"
-            class="form-control"
-            placeholder="Inserisci la tua email"
-            required
-          />
+        <form (ngSubmit)="login()">
+          <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              [(ngModel)]="email"
+              name="email"
+              class="form-control"
+              placeholder="Inserisci la tua email"
+              required
+            />
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              [(ngModel)]="password"
+              name="password"
+              class="form-control"
+              placeholder="Inserisci la tua password"
+              required
+            />
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-block">
+              Login
+            </button>
+          </div>
+        </form>
+
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
         </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            [(ngModel)]="password"
-            name="password"
-            class="form-control"
-            placeholder="Inserisci la tua password"
-            required
-          />
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block mt-3">
-          Login
-        </button>
-      </form>
-
-      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-        {{ errorMessage }}
       </div>
     </div>
   </div>

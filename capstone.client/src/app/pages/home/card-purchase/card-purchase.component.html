@@ -1,23 +1,25 @@
 <div class="container mt-5">
-  <h2>Catalogo di Carte</h2>
+  <h2 class="text-center mb-4 text-white">Catalogo di Carte</h2>
   <div class="row">
-    <div class="col-md-4" *ngFor="let card of cards">
-      <div class="card mb-4">
+    <div class="col-md-3" *ngFor="let card of cards">
+      <div class="card mb-4 card-hover">
         <img [src]="card.imageUrl" class="card-img-top" alt="{{ card.name }}" />
-        <div class="card-body">
-          <h5 class="card-title">{{ card.name }}</h5>
-          <p class="card-text">
+        <div class="card-body bg-dark">
+          <h5 class="card-title text-white">{{ card.name }}</h5>
+          <p class="card-text text-white">
             <strong>Categoria:</strong> {{ card.gameCategory }}
           </p>
-          <p class="card-text">
+          <p class="card-text text-white">
             <strong>Condizione:</strong> {{ card.condition }}
           </p>
-          <p class="card-text">
+          <p class="card-text text-white">
             <strong>Prezzo:</strong> {{ card.price | currency }}
           </p>
-          <button class="btn btn-primary" (click)="addToCart(card.id)">
-            Aggiungi al carrello
-          </button>
+          <div class="btn-container">
+            <button class="btn btn-info" (click)="addToCart(card.id)">
+              Aggiungi al carrello
+            </button>
+          </div>
         </div>
       </div>
     </div>

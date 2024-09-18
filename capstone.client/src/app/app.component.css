@@ -1,14 +1,27 @@
 ﻿:host {
-    max-width: 1280px;
-    padding: 2rem;
-    text-align: center;
+  max-width: 1280px;
+  padding: 0;
+  text-align: center;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+th,
+td {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 table {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  background: radial-gradient(
+    circle at center,
+    #1e3a72,
+    #2e5399,
+    #1a274e,
+    #1e3366
+  );
+  min-height: 30vh;
+  padding: 20px;
 }

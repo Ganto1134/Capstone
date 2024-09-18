@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h2>Gestione ordini</h2>
+  <h2 class="mb-4 text-white">Gestione ordini</h2>
 
   <div *ngIf="orders.length > 0; else noOrders">
     <table class="table table-striped">
@@ -20,15 +20,22 @@
           <td>
             <span
               [ngClass]="{
-                'badge bg-warning': order.status === 'In attesa',
-                'badge bg-info': order.status === 'In consegna',
-                'badge bg-success': order.status === 'Completato'
+                'bg-warning': order.status === 'In attesa',
+                'bg-info': order.status === 'In consegna',
+                'bg-success': order.status === 'Completato'
               }"
+              class="badge"
             >
               {{ order.status }}
             </span>
           </td>
           <td>
+            <button
+              class="btn btn-sm btn-warning me-2"
+              (click)="updateOrderStatus(order.id, 'In attesa')"
+            >
+              In attesa
+            </button>
             <button
               class="btn btn-sm btn-primary me-2"
               (click)="updateOrderStatus(order.id, 'In consegna')"

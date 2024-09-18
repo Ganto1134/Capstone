@@ -1,11 +1,10 @@
-<div
-  *ngIf="card"
-  class="container d-flex justify-content-center align-items-center my-3"
->
-  <div>
-    <h2 class="text-center">Dettagli della carta: {{ card.name }}</h2>
+<div *ngIf="card" class="container d-flex justify-content-center my-5">
+  <div class="card-details">
+    <h2 class="text-center text-white mb-4">
+      Dettagli della carta: {{ card.name }}
+    </h2>
 
-    <div class="card mt-4 d-flex ms-5" style="width: 18rem">
+    <div class="card mt-4 mx-auto" style="width: 18rem">
       <img
         *ngIf="card.imageUrl"
         [src]="card.imageUrl"
@@ -23,7 +22,11 @@
         <p class="card-text">
           <strong>Prezzo:</strong> {{ card.price | currency }}
         </p>
-        <a routerLink="/admin/list" class="btn btn-primary">Torna alla lista</a>
+        <div class="text-center">
+          <a routerLink="/admin/list" class="btn btn-primary mt-3">
+            Torna alla lista
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -34,8 +37,10 @@
   class="container d-flex justify-content-center align-items-center mt-5"
   style="height: 100vh"
 >
-  <div>
+  <div class="text-center">
     <h3>Carta non trovata!</h3>
-    <a routerLink="/admin/list" class="btn btn-primary">Torna alla lista</a>
+    <a routerLink="/admin/list" class="btn btn-primary mt-3"
+      >Torna alla lista</a
+    >
   </div>
 </div>

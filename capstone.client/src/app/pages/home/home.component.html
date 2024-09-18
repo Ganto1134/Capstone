@@ -1,17 +1,45 @@
 <div class="container mt-5">
-  <h2>Benvenuto nella pagina principale</h2>
+  <h2 class="text-white">Benvenuto nella pagina principale</h2>
+  <h3 class="text-info">Scegli la tua carta</h3>
 
   <div class="d-flex justify-content-center mt-4">
-    <button class="btn btn-primary mx-2" [routerLink]="['/home/purchase']">
-      Vai al catalogo di carte
-    </button>
+    <div class="card mx-2">
+      <img
+        src="../../../assets/images/pokemon.png"
+        class="card-img-top"
+        alt="Catalogo Carte"
+      />
+      <div class="card-body text-center">
+        <button class="btn red" [routerLink]="['/home/purchase']">
+          Vai al catalogo di carte
+        </button>
+      </div>
+    </div>
 
-    <button class="btn btn-secondary mx-2" [routerLink]="['/home/cart']">
-      Vai al carrello
-    </button>
+    <div class="card mx-2">
+      <img
+        src="../../../assets/images/yugioh.jpg"
+        class="card-img-top"
+        alt="Carrello"
+      />
+      <div class="card-body text-center">
+        <button class="btn brown" [routerLink]="['/home/cart']">
+          Vai al carrello
+        </button>
+      </div>
+    </div>
 
-    <button class="btn btn-secondary mx-2" [routerLink]="['/home/orders']">
-      Vai ai tuoi ordini
-    </button>
+    <div class="card mx-2">
+      <img
+        src="../../../assets/images/magic.avif"
+        class="card-img-top"
+        alt="Ordini"
+      />
+      <div class="card-body text-center">
+        <button class="btn blue" [routerLink]="['/home/orders']">
+          Vai ai tuoi ordini
+        </button>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,15 +1,45 @@
 <div class="container mt-5">
-  <h2>Pannello di Amministrazione</h2>
+  <h2 class="text-white">Pannello di Amministrazione</h2>
+  <h3 class="text-info">Scegli la tua carta</h3>
 
-  <button class="btn btn-primary" [routerLink]="['/admin/create']">
-    Crea nuova carta
-  </button>
+  <div class="d-flex justify-content-center mt-4">
+    <div class="card mx-2">
+      <img
+        src="../../../assets/images/magic.avif"
+        class="card-img-top"
+        alt="Catalogo Carte"
+      />
+      <div class="card-body text-center">
+        <button class="btn blue" [routerLink]="['/admin/create']">
+          Crea nuova carta
+        </button>
+      </div>
+    </div>
 
-  <button class="btn btn-secondary ml-2" [routerLink]="['/admin/list']">
-    Visualizza lista delle carte
-  </button>
+    <div class="card mx-2">
+      <img
+        src="../../../assets/images/yugioh.jpg"
+        class="card-img-top"
+        alt="Carrello"
+      />
+      <div class="card-body text-center">
+        <button class="btn brown" [routerLink]="['/admin/list']">
+          Visualizza lista delle carte
+        </button>
+      </div>
+    </div>
 
-  <button class="btn btn-secondary ml-2" [routerLink]="['/admin/orders']">
-    Visualizza lista degli ordini
-  </button>
+    <div class="card mx-2">
+      <img
+        src="../../../assets/images/pokemon.png"
+        class="card-img-top"
+        alt="Ordini"
+      />
+      <div class="card-body text-center">
+        <button class="btn red" [routerLink]="['/admin/orders']">
+          Visualizza lista degli ordini
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

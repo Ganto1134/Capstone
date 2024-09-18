@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h2>Il mio carrello</h2>
+  <h2 class="text-white mb-4">Il mio carrello</h2>
 
   <div *ngIf="cart && cart.items?.length > 0; else emptyCart">
     <table class="table">
@@ -36,7 +36,7 @@
         </tr>
       </tbody>
     </table>
-    <p>
+    <p class="text-white">
       <strong>Totale carrello: {{ getTotal() | currency }}</strong>
     </p>
     <button class="btn btn-success" (click)="checkout()">
@@ -45,6 +45,6 @@
   </div>
 
   <ng-template #emptyCart>
-    <p>Il tuo carrello è vuoto.</p>
+    <p class="text-info">Il tuo carrello è vuoto.</p>
   </ng-template>
 </div>
