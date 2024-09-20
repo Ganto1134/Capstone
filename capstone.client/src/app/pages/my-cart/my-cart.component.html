@@ -25,9 +25,9 @@
           </td>
           <td>{{ item.card.name }}</td>
           <td>{{ item.card.gameCategory }}</td>
-          <td>{{ item.card.price | currency }}</td>
+          <td>{{ item.card.price | currency : "EUR" }}</td>
           <td>{{ item.quantity }}</td>
-          <td>{{ item.card.price * item.quantity | currency }}</td>
+          <td>{{ item.card.price * item.quantity | currency : "EUR" }}</td>
           <td>
             <button class="btn btn-danger" (click)="removeFromCart(item.id)">
               Rimuovi
@@ -37,7 +37,7 @@
       </tbody>
     </table>
     <p class="text-white">
-      <strong>Totale carrello: {{ getTotal() | currency }}</strong>
+      <strong>Totale carrello: {{ getTotal() | currency : "EUR" }}</strong>
     </p>
     <button class="btn btn-success" (click)="checkout()">
       Completa Acquisto

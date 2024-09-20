@@ -16,7 +16,7 @@
         <tr *ngFor="let order of orders">
           <td>{{ order.id }}</td>
           <td>{{ order.orderDate | date }}</td>
-          <td>{{ order.totalAmount | currency }}</td>
+          <td>{{ order.totalAmount | currency : "EUR" }}</td>
           <td>{{ order.status }}</td>
           <td>
             <button class="btn btn-info" (click)="viewOrderDetails(order.id)">
@@ -44,7 +44,8 @@
         </p>
         <p><strong>Stato:</strong> {{ selectedOrder?.status }}</p>
         <p>
-          <strong>Totale:</strong> {{ selectedOrder?.totalAmount | currency }}
+          <strong>Totale:</strong>
+          {{ selectedOrder?.totalAmount | currency : "EUR" }}
         </p>
 
         <h5>Articoli</h5>
@@ -60,7 +61,7 @@
             <div class="item-details">
               <strong>{{ item.card.name }}</strong>
               {{ item.card.gameCategory }} - {{ item.quantity }} x
-              {{ item.price | currency }}
+              {{ item.price | currency : "EUR" }}
             </div>
           </li>
         </ul>

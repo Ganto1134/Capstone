@@ -21,7 +21,9 @@
         <td class="align-content-center">{{ card.name }}</td>
         <td class="align-content-center">{{ card.gameCategory }}</td>
         <td class="align-content-center">{{ card.condition }}</td>
-        <td class="align-content-center">{{ card.price | currency }}</td>
+        <td class="align-content-center">
+          {{ card.price | currency : "EUR" }}
+        </td>
         <td>
           <img
             [src]="card.imageUrl"

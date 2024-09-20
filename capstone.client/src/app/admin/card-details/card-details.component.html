@@ -20,7 +20,7 @@
           <strong>Categoria del gioco:</strong> {{ card.gameCategory }}
         </p>
         <p class="card-text">
-          <strong>Prezzo:</strong> {{ card.price | currency }}
+          <strong>Prezzo:</strong> {{ card.price | currency : "EUR" }}
         </p>
         <div class="text-center">
           <a routerLink="/admin/list" class="btn btn-primary mt-3">
